@@ -67,9 +67,12 @@ public class CaptchaSolver {
         captchaInput.sendKeys(extractedText);
         Thread.sleep(2000);
         // Click Submit Button (Modify Locator as Needed)
-        WebElement submitButton = driver.findElement(By.id("cryptstr")); // Update locator
-        submitButton.click();
+        WebElement submitButton = driver.findElement(By.id("cryptstr"));
 
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", submitButton);  // Scroll to button
+        Thread.sleep(1000);  // Wait a bit for any overlays to disappear
+        js.executeScript("arguments[0].click();", submitButton);  // Click using JavaScript
         // Wait for next page load
         Thread.sleep(1000);
         try {
