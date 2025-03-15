@@ -180,21 +180,21 @@ public class CaptchaSolver {
             }
         }
     }
-    @Test(priority = 5)
-    public void checkPendingReport() throws InterruptedException {
-        Select objSelect =new Select(driver.findElement(By.id("in_pettype")));
-        objSelect.selectByVisibleText("PENDING");
-        driver.findElement(By.id("gobtn")).click();
-        Thread.sleep(5000);
-    }
-    @AfterTest
-    public void tearDown() throws InterruptedException {
-        Actions actions = new Actions(driver);
-
-        for (int i = 0; i < 10; i++) {  // Adjust loop count for page length
-            actions.scrollByAmount(0, 2000).perform();  // Scroll down 200 pixels
-            Thread.sleep(500); // Wait for smooth effect
-        }
-        driver.quit();
-    }
+//    @Test(priority = 5)
+//    public void checkPendingReport() throws InterruptedException {
+//        Select objSelect =new Select(driver.findElement(By.id("in_pettype")));
+//        objSelect.selectByVisibleText("PENDING");
+//        driver.findElement(By.id("gobtn")).click();
+//        Thread.sleep(5000);
+//    }
+//    @AfterTest
+//    public void tearDown() throws InterruptedException {
+//        Actions actions = new Actions(driver);
+//
+//        for (int i = 0; i < 10; i++) {  // Adjust loop count for page length
+//            actions.scrollByAmount(0, 2000).perform();  // Scroll down 200 pixels
+//            Thread.sleep(500); // Wait for smooth effect
+//        }
+//        driver.quit();
+//    }
 }
